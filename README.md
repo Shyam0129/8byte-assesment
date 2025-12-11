@@ -390,4 +390,3 @@ This project is created for educational purposes as part of a technical assignme
 
 ---
 
-**Built with ❤️ using Apache Airflow, PostgreSQL, and Docker**
