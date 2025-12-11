@@ -67,7 +67,7 @@ services:
     ports:
       - "5433:5432" # Expose on 5433 to avoid conflicts
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "${POSTGRES_USER:-stockuser}" ]
+      test: [ "CMD", "pg_isready", "-U", "${POSTGRES_USER:-stockuser}", "-d", "${POSTGRES_DB:-stock_database}" ]
       interval: 10s
       retries: 5
       start_period: 5s

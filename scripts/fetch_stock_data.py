@@ -89,8 +89,13 @@ def fetch_stock_data(symbol='AAPL'):
             logger.warning(f"API Note: {data['Note']}")
             raise ValueError(f"API rate limit reached: {data['Note']}")
         
+        if 'Information' in data:
+            logger.warning(f"API Information: {data['Information']}")
+            raise ValueError(f"API rate limit or restriction: {data['Information']}")
+        
         if 'Time Series (60min)' not in data:
             logger.error(f"Unexpected API response format: {list(data.keys())}")
+            logger.error(f"Full API response: {data}")
             raise ValueError("Invalid API response format")
         
         logger.info(f"Successfully fetched data for {symbol}")

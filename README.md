@@ -389,5 +389,3 @@ This project is created for educational purposes as part of a technical assignme
 - ✅ **Dockerization**: Single command deployment
 
 ---
-
-**Built with ❤️ using Apache Airflow, PostgreSQL, and Docker**
